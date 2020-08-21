@@ -1,13 +1,13 @@
 import 'package:multi_language/langcode.dart';
 import 'package:multi_language/language_abstract.dart';
 
-String lang(String id) {
+String lang(int id) {
   var content = ManagerLang().lang(id);
   return content??"???";
 }
 
 
-extension StringExtend on String{
+extension IntExtend on int{
   trans(){
     return ManagerLang().lang(this);
   }
@@ -34,12 +34,12 @@ class ManagerLang extends LanguageAbstract{
     // TODO: implement getLangData
     return [
       LangModel(R.HELLO, "Xin chào", vn: "Xin chào", en: "Hello"),
-      LangModel("sminapo","Sminapo", vn: "Sminapo", en: "Sminapo"),
-      LangModel("sminapo","Sminapo", vn: "Sminapo", en: "Sminapo"),
+      LangModel(2,"Sminapo", vn: "Sminapo", en: "Sminapo"),
+      LangModel(3,"Sminapo", vn: "Sminapo", en: "Sminapo"),
     ];
   }
 }
 
 class R {
-  static String HELLO = "hello";
+  static int HELLO = 1;
 }

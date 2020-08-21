@@ -12,21 +12,21 @@ import 'constants.dart';
 abstract class LanguageAbstract {
 
   String _currentLang = LangCode.en.code;
-  Map<String, Map<String, String>> _multilan;
+  Map<String, Map<int, String>> _multilan;
 
   List<LangCode> _languages = List();
 
-  String lang(String id) {
+  String lang(int id) {
     return multilan[_currentLang][id];
   }
 
   clear(){
     if(_multilan != null){
-    _multilan.clear();
+      _multilan.clear();
     }
   }
 
-  Map<String, Map<String, String>> get multilan {
+  Map<String, Map<int, String>> get multilan {
     if (_multilan == null || _multilan.isEmpty) {
       _multilan = Map();
       List<LangCode> _languages = getLangDef();
@@ -79,7 +79,7 @@ abstract class LanguageAbstract {
 }
 
 class LangModel {
-  String key;
+  int key;
 
   String def;
   String vn;
